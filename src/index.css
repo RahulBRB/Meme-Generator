@@ -1,7 +1,7 @@
 .container{
   max-width: 80vh;
   background-color: white;
-  height: 80vh;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -67,11 +67,6 @@ main {
 }
 
 /* Display meme section */
-.meme{
-  margin-top: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  border: 2px solid #D5D4D8;
+.meme--image{
+  max-width: 100%;
 }
