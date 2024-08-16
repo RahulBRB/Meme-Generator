@@ -1,38 +1,42 @@
-import React, { useState } from "react";
-import memesData from "../memesData";
+import React, { useState, useEffect } from "react";
 
 export default function Meme() {
   const [meme, setMeme] = useState({
-    topText: "",
-    bottomText: "",
+    topText: "Top Text",
+    bottomText: "Bottom Text",
     randomImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3AGD4O2UoQ4AjFXjB76E3bQCjMVGV2BfCtA&s",
+      "https://i.imgflip.com/145qvv.jpg",
   });
 
-  //Text section
-  function handleChange(event){
-    const {name, value} = event.target;
-    setMeme(prevMeme =>{
-      return {
-        ...prevMeme,
-        [name]: value
-      }
-    })
-  }
+  const [allMemes, setAllMemes] = useState([]); // It will be an empty array first which we will fill with data from the API
+  
+  // API section
+  useEffect(() => {
+    fetch('https://api.imgflip.com/get_memes')
+      .then(response => response.json())
+      .then(data => setAllMemes(data.data.memes));
+  }, []);
 
-  //Image section
-  const [allMemeImages, setAllMemeImages] = useState(memesData.data);
-
+  // Image section
   function getMemeImage() {
-    const memeArray = allMemeImages.memes;
-    const randomNum = Math.floor(Math.random() * memeArray.length);
-
-    const memeUrl = memeArray[randomNum].url;
+    const randomNum = Math.floor(Math.random() * allMemes.length);
+    const memeUrl = allMemes[randomNum].url;
 
     setMeme((prevMeme) => {
       return {
         ...prevMeme,
         randomImage: memeUrl
+      };
+    });
+  }
+
+  // Text section
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setMeme(prevMeme => {
+      return {
+        ...prevMeme,
+        [name]: value
       };
     });
   }
