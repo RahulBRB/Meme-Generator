@@ -1,6 +1,4 @@
 
----
-
 # 🖼️ Simple Meme Generator
 
 Welcome to the **Simple Meme Generator**! This is a fun little project where you can generate random meme images and add your own text to them. Perfect for creating that next viral meme or just having some laughs with friends.
@@ -28,31 +26,3 @@ Welcome to the **Simple Meme Generator**! This is a fun little project where you
 1. **Random Meme Image:** Click the "Get a new meme image 🖼" button, and the app will fetch a random meme image from the Imgflip API.
 2. **Add Your Text:** Type in your desired top and bottom text.
 3. **Voila!** The meme is generated right in front of your eyes.
-
-## 🏃‍♂️ How to Run the Project
-
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/yourusername/simple-meme-generator.git
-   ```
-2. **Navigate to the project directory:**
-   ```bash
-   cd simple-meme-generator
-   ```
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-4. **Start the development server:**
-   ```bash
-   npm start
-   ```
-5. **Generate Memes:** Open your browser and go to `http://localhost:3000`. Start generating some memes!
-
-
-## 📝 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
